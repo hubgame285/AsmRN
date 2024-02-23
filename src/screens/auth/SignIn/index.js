@@ -9,32 +9,29 @@ import Separator from "../../../components/Separator";
 import GoogleLogin from "../../../components/GoogleLogin";
 
 
-const SignUp = ({navigation}) =>{
-    const [checked, setChecked] = useState(false);
-    const onSignIn = () => {
-        navigation.navigate('SignIn');
+const SignIn = ({navigation}) =>{
+    const onSignUp = () => {
+        navigation.navigate('SignUp');
     };
+
     const onBack = () => {
         navigation.goBack(); 
     };
     return(
         <View style={styles.container}>
-            <AuthHeader onBackPress={onBack} title="Sign Up" />
-            <Input label="Name" placeholder="Example Jonh" />
+            <AuthHeader onBackPress={onBack} title="Sign In" />
             <Input label="Email" placeholder="example@gmail.com" />
             <Input isPassword label="Password" placeholder="******" />
-            <View style={styles.checkRow}>
-                <Checkbox checked={checked} onCheck={setChecked}></Checkbox>
-                <Text style={styles.checkText}>I agree with Terms & Privacy</Text>
-            </View>
-            <Button style={styles.button} title="Sign Up"></Button>
-            <Separator text="Or sign up with"></Separator>
+            <Button style={styles.button} title="Sign In"></Button>
+        
+            <Separator text="Or sign in with"></Separator>
             <GoogleLogin></GoogleLogin>
 
             <Text style={styles.footerText}>
-                Already have an account?
-                <Text onPress={onSignIn} style={styles.footerLink}>
-                    Sign In
+                Don't have an account? 
+                <Text onPress={onSignUp} style={styles.footerLink}>
+                    {' '}
+                    Sign Up
                 </Text>
             </Text>
                                                     
@@ -42,4 +39,4 @@ const SignUp = ({navigation}) =>{
     );
 };  
 
-export default SignUp;
+export default SignIn;

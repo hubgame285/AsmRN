@@ -1,17 +1,17 @@
 import React from "react";
 import { Text, View, Image, Pressable} from "react-native";
-import { stylesAHeader } from "./styles";
+import { styles } from "./styles";
 
 
 const AuthHeader = ({title, onBackPress}) =>{
     return(
-        <View style={stylesAHeader.container}>
-            <Pressable onBackPress={onBackPress}>
+        <View style={styles.container}>
+            <Pressable onPress={onBackPress}>
                 <Image
-                    style={stylesAHeader.iconBack}
-                    source={require('../../assets/icons/icon_back.png')}></Image>
+                    style={styles.iconBack}
+                    source={require('../../assets/icon_back.png')}></Image>
             </Pressable>
-            <Text style = {stylesAHeader.title}>{title}</Text>
+            <Text style = {styles.title}>{title}</Text>
         </View>
     );
 };
